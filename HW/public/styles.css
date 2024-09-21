@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    padding-top: 0px;
+}
+
+.navbar-logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    margin-top: -5px;
+}
+
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #4b9c82;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #555;
+}
+
+.navbar {
+    background-color: #4b9c82;
+    border-bottom: 3px solid #388e72;
+}
+
+.navbar a {
+    color: white !important;
+    font-weight: 400;
+    padding: 15px;
+    font-size: 1.1em;
+}
+
+.navbar a:hover {
+    background-color: #388e72;
+    transition: background-color 0.3s ease;
+}
+
+.container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: auto;
+}
+
+.btn-primary {
+    background-color: #4b9c82;
+    border-color: #4b9c82;
+}
+
+.btn-primary:hover {
+    background-color: #388e72;
+    border-color: #388e72;
+}
+
+.footer {
+    background-color: #388e72;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer a {
+    color: white;
+    text-decoration: underline;
+}
+
+.footer a:hover {
+    color: #f0f8ff;
+}
+
+ul {
+    list-style-type: square;
+}
+
+li {
+    font-size: 1.1em;
+    padding: 10px 0;
+
+}
+
+.navbar-default .navbar-nav>.active>a {
+    border-radius: 12px;
+    background-color: #1d7358;
+}
+
+.navbar-default .navbar-nav>.active>a:hover {
+    background-color: #1d7358;
+}
+
+.error-page h1 {
+    font-size: 100px;
+    color: #ff6666;
+}
+
+.error-page h3 {
+    font-size: 24px;
+    color: #333;
+}
+
+.error-page p {
+    font-size: 18px;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .navbar a {
+        font-size: 1em;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

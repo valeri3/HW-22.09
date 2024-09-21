@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Добавить товар</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li><a href="/add">Добавить товар</a></li>
+      <li><a href="/edit">Редактировать товар</a></li>
+      <li><a href="/all">Посмотреть все товары</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <h1>Добавить новый товар</h1>
+
+  <div id="message" class="alert" style="display: none;"></div>
+
+  <form action="/submit-add" method="post">
+    <div class="form-group">
+      <label for="name">Название товара</label>
+      <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="price">Цена товара</label>
+      <input type="text" class="form-control" id="price" name="price" required>
+    </div>
+    <div class="form-group">
+      <label for="description">Описание товара</label>
+      <textarea class="form-control" id="description" name="description" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Добавить</button>
+    <a href="/admin" class="btn btn-default">Назад</a>
+  </form>
+
+
+</div>
+
+<script>
+  function getQueryParams() {
+    const params = {};
+    window.location.search.substr(1).split("&").forEach(function(item) {
+      const [key, value] = item.split("=");
+      if (key) params[key] = decodeURIComponent(value);
+    });
+    return params;
+  }
+
+  const params = getQueryParams();
+  const messageDiv = document.getElementById('message');
+
+  if (params.message === 'success') {
+    messageDiv.textContent = 'Товар успешно добавлен!';
+    messageDiv.className = 'alert alert-success';
+    messageDiv.style.display = 'block';
+  }
+
+  setTimeout(() => {
+    messageDiv.style.display = 'none';
+  }, 5000);
+</script>
+
+</body>
+</html>

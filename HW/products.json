@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Apple MacBook Pro 14",
+    "price": "2299",
+    "description": "Ноутбук Apple MacBook Pro 14 с процессором M1 Pro и 16 ГБ ОЗУ"
+  },
+  {
+    "name": "Dell XPS 13",
+    "price": "1499",
+    "description": "Ноутбук Dell XPS 13 с процессором Intel Core i7, 16 ГБ ОЗУ и 512 ГБ SSD"
+  },
+  {
+    "name": "HP Spectre x360",
+    "price": "1699",
+    "description": "Ноутбук-трансформер HP Spectre x360 с процессором Intel Core i7 и сенсорным экраном"
+  },
+  {
+    "name": "Samsung Galaxy S21",
+    "price": "999",
+    "description": "Смартфон Samsung Galaxy S21 с 8 ГБ ОЗУ и 128 ГБ памяти"
+  },
+  {
+    "name": "Apple iPhone 13 Pro",
+    "price": "1199",
+    "description": "Смартфон Apple iPhone 13 Pro с 6.1-дюймовым дисплеем и тройной камерой"
+  },
+  {
+    "name": "Sony Bravia XR-55A90J",
+    "price": "1999",
+    "description": "55-дюймовый OLED телевизор Sony Bravia XR с поддержкой 4K"
+  },
+  {
+    "name": "LG OLED CX 65",
+    "price": "2499",
+    "description": "65-дюймовый OLED телевизор LG с поддержкой 4K и Dolby Atmos"
+  },
+  {
+    "name": "Xiaomi Mi 11",
+    "price": "749",
+    "description": "Смартфон Xiaomi Mi 11 с 8 ГБ ОЗУ и 128 ГБ памяти, Snapdragon 888"
+  },
+  {
+    "name": "Google Pixel 6",
+    "price": "799",
+    "description": "Смартфон Google Pixel 6 с 50 МП камерой и 5G"
+  },
+  {
+    "name": "Asus ROG Zephyrus G14",
+    "price": "1799",
+    "description": "Игровой ноутбук Asus ROG Zephyrus G14 с процессором AMD Ryzen 9 и видеокартой RTX 3060"
+  }
+]

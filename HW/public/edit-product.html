@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Редактировать товар</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li><a href="/add">Добавить товар</a></li>
+      <li><a href="/edit">Редактировать товар</a></li>
+      <li><a href="/all">Посмотреть все товары</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <h1>Редактировать товар</h1>
+  <form id="edit-form" method="post">
+    <div class="form-group">
+      <label for="name">Название товара</label>
+      <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="price">Цена товара</label>
+      <input type="text" class="form-control" id="price" name="price" required>
+    </div>
+    <div class="form-group">
+      <label for="description">Описание товара</label>
+      <textarea class="form-control" id="description" name="description" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+    <a href="/edit" class="btn btn-default">Назад</a>
+  </form>
+</div>
+
+<script>
+  const productIndex = window.location.pathname.split('/').pop();
+
+  document.getElementById('price').addEventListener('input', function (e) {
+    this.value = this.value.replace(/[^0-9.]/g, '');
+  });
+
+  function loadProduct() {
+    fetch(`/get-product/${productIndex}`)
+            .then(response => response.json())
+            .then(product => {
+              document.getElementById('name').value = product.name;
+              document.getElementById('price').value = product.price;
+              document.getElementById('description').value = product.description;
+            })
+            .catch(err => {
+              console.error('Ошибка загрузки товара:', err);
+            });
+  }
+
+  document.getElementById('edit-form').onsubmit = function(e) {
+    e.preventDefault();
+    const updatedProduct = {
+      name: document.getElementById('name').value,
+      price: document.getElementById('price').value,
+      description: document.getElementById('description').value
+    };
+
+    fetch(`/edit-product/${productIndex}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(updatedProduct)
+    })
+            .then(() => {
+              window.location.href = '/edit?message=success';
+            })
+            .catch(err => {
+              console.error('Ошибка при обновлении товара:', err);
+            });
+  };
+
+  window.onload = loadProduct;
+</script>
+</body>
+</html>
